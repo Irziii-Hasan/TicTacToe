@@ -31,7 +31,7 @@ public class Run {
 //            Checking for invalid move
             while (!inValidMove) {
 //                check if the user enter greater than grid value(index out of bound)
-                if (enteredRow>=3 && enteredCol>=3){
+                if (enteredRow>=3 || enteredCol>=3){
                     System.out.println("invalid move...");
                     System.out.println();
                     gameRunner.getPlayerMove(playerMode);
@@ -68,7 +68,12 @@ public class Run {
             if(move==9) {
                 boolean isBoardFilled = gameBoard.isBoardFilled();
                 if (isBoardFilled) {
-                    player.declareWinner();
+                    String isWinner = gameBoard.checkWinner(playerMode,enteredRow,enteredCol);
+                    if (isWinner=="X" || isWinner=="O"){
+                        player.declareWinner();
+                    }else {
+                        gameRunner.matchDrawMessage();
+                    }
                     gameRunner.endMessage();
                     gameEnd = true;
                 }
