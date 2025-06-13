@@ -14,10 +14,10 @@ public class Player  {
     }
 
 
-    public void declareWinner(){
+    public void declareWinner(String player){
         System.out.println();
         System.out.println("***************************************************");
-        System.out.println("\t****---Hurray!... You won Player "+playerType+"---****");
+        System.out.println("\t****---Hurray!... You won Player "+player+"---****");
         System.out.println("***************************************************");
     }
 
