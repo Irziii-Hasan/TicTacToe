@@ -49,54 +49,28 @@ public class Run {
                         gameRunner.getPlayerMove(playerMode);
                         enteredRow = gameRunner.getEnteredRow();
                         enteredCol = gameRunner.getEnteredCol();
-
                     }
                 }
 
             }
             gameBoard.showBoard();
 
-//            checking if anyone wins after 4 initial moves.
-            if (move>4){
-                String isWinner = gameBoard.checkWinner(playerMode,enteredRow,enteredCol);
-                if (isWinner=="X" || isWinner=="O"){
-                    player.declareWinner();
-                    gameEnd = true;
-                }
-            }
+//            checking if anyone wins after every move.
+            boolean isWinner = gameBoard.checkWinner(playerMode);
+            boolean isBoardFilled = gameBoard.isBoardFilled();
 
-            if(move==9) {
-                boolean isBoardFilled = gameBoard.isBoardFilled();
-                if (isBoardFilled) {
-                    String isWinner = gameBoard.checkWinner(playerMode,enteredRow,enteredCol);
-                    if (isWinner=="X" || isWinner=="O"){
-                        player.declareWinner();
-                    }else {
-                        gameRunner.matchDrawMessage();
-                    }
-                    gameRunner.endMessage();
-                    gameEnd = true;
-                }
+            if (isWinner){
+                player.declareWinner(playerMode);
+                gameEnd = true;
+            }else if (isBoardFilled) {
+                gameRunner.matchDrawMessage();
+                gameEnd = true;
+            }else {
+                move++;
             }
-            move++;
         }
+        gameRunner.endMessage();
 
-//        for (int i = 0; i < 5; i++) {
-//            gameBoard.showBoard();
-//
-//            String userType = player.userType();
-//            System.out.println(userType+" Turn");
-//
-//            System.out.print("Enter Row");
-//            int gridRow = scanner.nextInt();
-//            System.out.print("Enter Column");
-//            int gridCol = scanner.nextInt();
-//
-//
-//            gameBoard.updateBoard(gridRow,gridCol,userType);
-//            String winner = gameBoard.checkWinner(userType,gridRow,gridCol);
-//            System.out.println("===========================");
-//            System.out.println(winner);
-//        }
+
     }
 }
