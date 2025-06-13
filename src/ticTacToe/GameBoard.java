@@ -52,136 +52,161 @@ public class GameBoard {
     if row is less than col
 
  */
-    public String  checkWinner(String userType, int gridRow, int gridCol){
-        if(gridRow ==gridCol){
-            if (gridRow ==1){
-                if (board[0][0]==userType){
-                    if(board[2][2]==userType){
-                        return userType;
-                    }
-                } else if (board[0][1]==userType) {
-                    if (board[2][1]==userType){
-                        return  userType;
-                    }
-                } else if (board[1][0]==userType) {
-                    if (board[1][2]==userType){
-                        return userType;
-                    }
-                } else if (board[0][2]==userType) {
-                    if (board[2][0]==userType){
-                        return userType;
-                    }
-                }
+//    public String  checkWinner(String userType, int gridRow, int gridCol){
+//        if(gridRow ==gridCol){
+//            if (gridRow ==1){
+//                if (board[0][0]==userType){
+//                    if(board[2][2]==userType){
+//                        return userType;
+//                    }
+//                } else if (board[0][1]==userType) {
+//                    if (board[2][1]==userType){
+//                        return  userType;
+//                    }
+//                } else if (board[1][0]==userType) {
+//                    if (board[1][2]==userType){
+//                        return userType;
+//                    }
+//                } else if (board[0][2]==userType) {
+//                    if (board[2][0]==userType){
+//                        return userType;
+//                    }
+//                }
+//
+//            } else if (gridRow ==0) {
+//                if (board[0][1]==userType){
+//                    if (board[0][2]==userType){
+//                        return userType;
+//                    }
+//                }else if (board[1][0]==userType) {
+//                    if (board[2][0]==userType){
+//                        return userType;
+//                    }
+//
+//                } else if (board[1][1]==userType) {
+//                    if (board[2][2]==userType){
+//                        return userType;
+//                    }
+//                }
+//            } else{
+//                if (board[2][1]==userType){
+//                    if (board[2][0]==userType){
+//                        return userType;
+//                    }
+//                } else if (board[1][1]==userType) {
+//                    if (board[0][0]==userType){
+//                        return userType;
+//                    }
+//
+//                } else if (board[1][2]==userType) {
+//                    if (board[0][2]==userType){
+//                        return userType;
+//                    }
+//
+//                }
+//            }
+//        } else if (gridRow >gridCol) {
+//            if (gridCol==1){
+//                if (board[1][1]==userType){
+//                    if (board[0][1]==userType){
+//                        return userType;
+//                    }
+//                } else if (board[2][0]==userType) {
+//                    if (board[2][2]==userType){
+//                        return userType;
+//                    }
+//                }
+//            } else if (gridRow==1) {
+//                if (board[1][1]==userType){
+//                    if (board[1][2]==userType){
+//                        return userType;
+//                    }
+//                } else if (board[2][0]==userType) {
+//                    if (board[0][0]==userType){
+//                        return userType;
+//                    }
+//                }
+//            }else {
+//                if (board[2][1]==userType){
+//                    if (board[2][2]==userType){
+//                        return userType;
+//                    }
+//                } else if (board[1][0]==userType) {
+//                    if (board[0][0]==userType){
+//                        return userType;
+//                    }
+//
+//                } else if (board[1][1]==userType) {
+//                    if (board[0][2]==userType){
+//                        return userType;
+//                    }
+//                }
+//            }
+//        }else {
+//            if (gridRow==1){
+//                if (board[1][1]==userType){
+//                    if (board[1][0]==userType){
+//                        return userType;
+//                    }
+//                } else if (board[2][2]==userType) {
+//                    if (board[0][2]==userType){
+//                        return userType;
+//                    }
+//                }
+//            } else if (gridCol==1) {
+//                if (board[1][1]==userType){
+//                    if (board[2][1]==userType){
+//                        return userType;
+//                    }
+//                }else if (board[0][0]==userType){
+//                    if (board[0][2]==userType){
+//                        return userType;
+//                    }
+//                }
+//            }else {
+//                if (board[0][1]==userType){
+//                    if (board[0][0]==userType){
+//                        return userType;
+//                    }
+//                } else if (board[1][2]==userType) {
+//                    if (board[2][2]==userType){
+//                        return userType;
+//                    }
+//
+//                } else if (board[1][1]==userType) {
+//                    if (board[2][0]==userType){
+//                        return userType;
+//                    }
+//
+//                }
+//            }
+//        }
+//        return null;
+//    }
 
-            } else if (gridRow ==0) {
-                if (board[0][1]==userType){
-                    if (board[0][2]==userType){
-                        return userType;
-                    }
-                }else if (board[1][0]==userType) {
-                    if (board[2][0]==userType){
-                        return userType;
-                    }
-
-                } else if (board[1][1]==userType) {
-                    if (board[2][2]==userType){
-                        return userType;
-                    }
-                }
-            } else{
-                if (board[2][1]==userType){
-                    if (board[2][0]==userType){
-                        return userType;
-                    }
-                } else if (board[1][1]==userType) {
-                    if (board[0][0]==userType){
-                        return userType;
-                    }
-
-                } else if (board[1][2]==userType) {
-                    if (board[0][2]==userType){
-                        return userType;
-                    }
-
-                }
-            }
-        } else if (gridRow >gridCol) {
-            if (gridCol==1){
-                if (board[1][1]==userType){
-                    if (board[0][1]==userType){
-                        return userType;
-                    }
-                } else if (board[2][0]==userType) {
-                    if (board[2][2]==userType){
-                        return userType;
-                    }
-                }
-            } else if (gridRow==1) {
-                if (board[1][1]==userType){
-                    if (board[1][2]==userType){
-                        return userType;
-                    }
-                } else if (board[2][0]==userType) {
-                    if (board[0][0]==userType){
-                        return userType;
-                    }
-                }
-            }else {
-                if (board[2][1]==userType){
-                    if (board[2][2]==userType){
-                        return userType;
-                    }
-                } else if (board[1][0]==userType) {
-                    if (board[0][0]==userType){
-                        return userType;
-                    }
-
-                } else if (board[1][1]==userType) {
-                    if (board[0][2]==userType){
-                        return userType;
-                    }
-                }
-            }
+    public boolean  checkWinner(String userType){
+        if(board[0][0] == userType && board[0][1] == userType && board[0][2] == userType){
+            return true;
+        } else if (board[0][0] == userType && board[1][0] == userType && board[2][0] == userType) {
+            return true;
+        } else if (board[0][0] == userType && board[1][1] == userType && board[2][2] == userType) {
+            return true;
+        } else if (board[0][1] == userType && board[1][1] == userType && board[2][1] == userType) {
+            return true;
+        } else if (board[0][2] == userType && board[1][2] == userType && board[2][2] == userType) {
+            return true;
+        } else if (board[0][2] == userType && board[1][1] == userType && board[2][0] == userType) {
+            return true;
+        } else if (board[1][0] == userType && board[1][1] == userType && board[1][2] == userType) {
+            return true;
+        } else if (board[2][0] == userType && board[2][1] == userType && board[2][2] == userType) {
+            return true;
         }else {
-            if (gridRow==1){
-                if (board[1][1]==userType){
-                    if (board[1][0]==userType){
-                        return userType;
-                    }
-                } else if (board[2][2]==userType) {
-                    if (board[0][2]==userType){
-                        return userType;
-                    }
-                }
-            } else if (gridCol==1) {
-                if (board[1][1]==userType){
-                    if (board[2][1]==userType){
-                        return userType;
-                    }
-                }else if (board[0][0]==userType){
-                    if (board[0][2]==userType){
-                        return userType;
-                    }
-                }
-            }else {
-                if (board[0][1]==userType){
-                    if (board[0][0]==userType){
-                        return userType;
-                    }
-                } else if (board[1][2]==userType) {
-                    if (board[2][2]==userType){
-                        return userType;
-                    }
-
-                } else if (board[1][1]==userType) {
-                    if (board[2][0]==userType){
-                        return userType;
-                    }
-
-                }
-            }
+            return false;
         }
-        return null;
     }
+    
+
+
 
 }
