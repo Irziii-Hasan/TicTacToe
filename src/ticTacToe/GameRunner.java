@@ -41,7 +41,7 @@ public class GameRunner {
     public void matchDrawMessage(){
         System.out.println();
         System.out.println("***************************************************");
-        System.out.println("\t****---Oh no!... ITS TIE---****");
+        System.out.println("\t****---Oh no!... IT'S TIE---****");
         System.out.println("***************************************************");
     }
 }
